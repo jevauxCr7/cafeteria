@@ -1,0 +1,107 @@
+/* Estilo básico para reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #444;
+    text-align: center;
+}
+
+/* Cardápio e pedidos em layout de grid */
+#cardapio, #pedidos {
+    display: grid;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+#cardapio {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+#pedidos {
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Estilo dos itens no cardápio e pedidos */
+#cardapio li, #pedidos li {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#cardapio li:hover {
+    transform: scale(1.05);
+}
+
+/* Imagens */
+#cardapio img, #pedidos img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Texto dos produtos */
+figcaption {
+    padding: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+figcaption strong {
+    display: block;
+    margin-top: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Valor total */
+#valorTotal {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 2px solid #ddd;
+    text-align: center;
+    width: 100%;
+    background-color: #fff8dc;
+    border-radius: 4px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    #pedidos {
+        width: 100%;
+    }
+    #cardapio {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
